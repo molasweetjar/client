@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One&display=swap');
+
+.footerLogo {
+  font-family: 'Pacifico', cursive;
+  color: pink
+}
+
+.text {
+  font-family: 'Fredoka One', cursive;
+  margin-left: 10px
+}
+
+.powered {
+  font-family: 'Fredoka One', cursive;
+}

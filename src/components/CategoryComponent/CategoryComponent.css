@@ -1,0 +1,8 @@
+.cardCategory {
+  cursor: pointer;
+}
+
+.cardCategory:hover{
+  background-color: salmon;
+  opacity: 9 !important;
+}

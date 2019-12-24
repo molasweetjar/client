@@ -1,0 +1,9 @@
+.cardCategory {
+  width: '80%';
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  display: flex;
+  background-color: pink
+}
