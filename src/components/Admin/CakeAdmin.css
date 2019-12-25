@@ -1,0 +1,8 @@
+/* isplay: 'flex', width: '100%', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' */
+.formPicture {
+  display: flex;
+  width: '100%';
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

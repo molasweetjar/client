@@ -15,28 +15,42 @@ export default () => {
   const [ description, setDescription ] = useState('');
   const [ cake, setCake ] = useState({});
   const [ error, setError ] = useState(false);
+  const [ loading, setLoading ] = useState(false);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const getCakeByCategory = async () => {
-      try {
-        const { data } = await axios({ method: 'get', url: `/cake/${category}` })
-        setCake(data.cake)
-        setDescription(data.cake.description)
-      } catch(err) { console.log(err.response.data.msg); setError(err.response.data.msg) }
-    }
     getCakeByCategory();
   }, [])
 
-  const changeDescription = (id) => {
-    axios({ method: 'post', url: `/cake/description/${id}`, data: { description }, headers: { token: localStorage.getItem('token') } })
-      .then(({data}) => {
-        dispatch(getCategory())
-      })
-      .catch(err => console.log(err.response.data.msg))
+  const getCakeByCategory = async () => {
+    try {
+      const { data } = await axios({ method: 'get', url: `/cake/${category}` })
+      setCake(data.cake)
+      setDescription(data.cake.description)
+    } catch(err) { setError(err.response.data.msg) }
   }
 
-  if(error) return <h1>Error..</h1>
+  const changeDescription = (id) => {
+    setLoading(true)
+    axios({ method: 'post', url: `/cake/description/${id}`, data: { description }, headers: { token: localStorage.getItem('token') } })
+      .then(_ => {
+        dispatch(getCategory());
+        setLoading(false)
+      })
+      .catch(err => setError(err.response.data.msg))
+  }
+
+  const deletePicture = async ( name ) => {
+    setLoading(true)
+    try { 
+      await axios({ method: 'patch', url: `/cake/removepic/${ cake._id }`, data: { CakeImage: name }, headers: { token: localStorage.getItem('token') } }) 
+      getCakeByCategory();
+      setLoading(false)
+    }
+    catch(err) { setError(err.response.data.msg) }
+  }
+
+  if(error) return <h1>Error.. { error }</h1>
 
   return (
     <>
@@ -48,7 +62,7 @@ export default () => {
               <h3 style={{ textAlign: 'center' }}>{ cake.Category ? cake.Category.name : null }</h3>
               {
                 (role === 'admin')
-                  ? <CakeAdmin setDes={ description } changeDescription={ setDescription } id={ cake._id } descriptionProps={ changeDescription }/>
+                  ? <CakeAdmin setDes={ description } changeDescription={ setDescription } id={ cake._id } descriptionProps={ changeDescription } refetchCake={ getCakeByCategory } loading={ loading } setLoading={ setLoading }/>
                   : <h6>{ cake.description }</h6>
               }
             </Row>
@@ -56,7 +70,7 @@ export default () => {
               {
                 cake.CakeImage
                   ?
-                  cake.CakeImage.reverse().map((cake, i) => <CardCake key={i} data={ cake } />)
+                  cake.CakeImage.reverse().map((cake, i) => <CardCake key={i} data={ cake } removePicture={ deletePicture }/>)
                   : null
               }
             </Row>
