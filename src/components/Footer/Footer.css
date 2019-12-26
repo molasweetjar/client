@@ -14,3 +14,16 @@
 .powered {
   font-family: 'Fredoka One', cursive;
 }
+
+.buttonShare {
+  background-color: #81eff7;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+}
+
+.buttonShare:hover{
+  background-color: '#a2f8fa'
+}

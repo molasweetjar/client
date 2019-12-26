@@ -1,7 +1,6 @@
 import axios from '../../apis'
 
 export default state => next => async action => {
-  console.log(action)
   if(action.typeCategory){
     next({ type: `${action.typeCategory}_LOADING` })
     try{
@@ -17,8 +16,5 @@ export default state => next => async action => {
         next({ type: `${action.typeSignin}_SUCCESS`, payload: data.user })
       } else next({ type: `${action.typeSignin}_SUCCESS`, payload: data.user })
     } catch(err) { next({ type: `${action.typeSignin}_ERROR`, payload: err.response })}
-  } else {
-    console.log('masuk sini harusnya')
-    next({ type: action.type })
-  }
+  } else next(action)
 }

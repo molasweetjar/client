@@ -17,7 +17,7 @@ export default () => {
           <img
             className="d-block w-100"
             src="https://storage.cloud.google.com/ecommerce_project/madewithlove/Screen%20Shot%202019-12-23%20at%2019.22.44.png?authuser=0"
-            alt="First slide"
+            alt="Fail Loaded Image"
             height='300'
           />
           <Carousel.Caption style={{ color: 'black' }}>
@@ -27,7 +27,7 @@ export default () => {
           <img
             className="d-block w-100"
             src="https://storage.cloud.google.com/ecommerce_project/madewithlove/Screen%20Shot%202019-12-23%20at%2019.28.14.png?authuser=0"
-            alt="Second slide"
+            alt="Fail Loaded Image"
             height='300'
           />
           <Carousel.Caption>
@@ -37,7 +37,7 @@ export default () => {
           <img
             className="d-block w-100"
             src="https://storage.cloud.google.com/ecommerce_project/madewithlove/Screen%20Shot%202019-12-22%20at%2014.55.33.png?authuser=0"
-            alt="Third slide"
+            alt="Fail Loaded Image"
             height= '300'
           />
           <Carousel.Caption>
