@@ -15,7 +15,7 @@ export default () => {
           <FacebookProvider appId="602773330474185">
             <Share href="http://cake.molasweetjar.xyz">
               {({ handleClick, loading }) => (
-                <button type="button" className='buttonShare' disabled={loading} onClick={handleClick}><span style={{ fontSize: '10px' }}>Share to facebook</span></button>
+                <button type="button" className='buttonShare' disabled={loading} onClick={handleClick}><span style={{ fontSize: '10px', width: '120px'}}>Share facebook</span></button>
               )}
             </Share>
           </FacebookProvider>
@@ -37,6 +37,12 @@ export default () => {
         <Col style={{ display: 'flex', flexDirection: 'row' }}>
           <Image src="https://i.pinimg.com/originals/29/93/fd/2993fd151e2e1cab871aec155e22cbcc.png" width={30} height={30} />
           <div className='text'>Jl.Sumpah Pemuda blok I No.7B RT.032 RW.009 Kel.Lorok Pakjo Kec.Ilir Barat I. Palembang Sumatera Selatan</div>
+        </Col>
+      </Row>
+      <Row className='mt-1'>
+        <Col style={{ display: 'flex', flexDirection: 'row' }}>
+          <Image src='http://www.pngmart.com/files/7/Reseller-Hosting-PNG-HD.png' width={30} height={30} />
+          <div className='text'>website -> <a href='http://api.whatsapp.com/send?phone=6289604884717&text=saya%20tertarik%20ingin%20membuat%20website%20dari%20diwebsitenya%20molasweetjar' target='_'>+62 896-0488-4717</a> / <a href='http://instagram.com/ericsudhartio'>Instagram</a></div>
         </Col>
       </Row>
       <Row className='mt-1' style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>

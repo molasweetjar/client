@@ -69,9 +69,7 @@ export default () => {
             <Row style={{ display: 'flex', flexDirection: 'row', width: '100%', margin:2 }}>
               {
                 cake.CakeImage
-                  ?
-                  cake.CakeImage.reverse().map((cake, i) => <CardCake key={i} data={ cake } removePicture={ deletePicture }/>)
-                  : null
+                  &&  cake.CakeImage.reverse().map((cake, i) => <CardCake key={i} data={ cake } removePicture={ deletePicture }/>)
               }
             </Row>
           </>

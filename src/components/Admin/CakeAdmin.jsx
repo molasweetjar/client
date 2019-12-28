@@ -29,16 +29,18 @@ export default ( props ) => {
         <div className='btnSave'><a style={{ fontSize: 10, color: "blue" }} onClick={() => props.descriptionProps(props.id)}>Save Change</a></div>
       </div>
       <form id='formPicture' onSubmit={e => uploadImage(e)} encType="multipart/form-data">
-        <input type='file' onChange={({ target }) => setFile(target.files[0])}/>
-        {
-          props.loading
-            ? <Spinner animation="border" role="status">
-                <span className="sr-only">Loading...</span>
-              </Spinner>
-            :
-            file
-              && <input type='submit' value='add picture' />
-        }
+        <div style={{ display: 'flex', flexDirection: 'column', width: '100%', alignItems: 'center', justifyContent: 'ceneter' }}>
+          <input type='file' onChange={({ target }) => setFile(target.files[0])}/>
+          {
+            props.loading
+              ? <Spinner animation="border" role="status">
+                  <span className="sr-only">Loading...</span>
+                </Spinner>
+              :
+              file
+                && <input type='submit' value='add picture' />
+          }
+        </div>
       </form>
     </>
   )

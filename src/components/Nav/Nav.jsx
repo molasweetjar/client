@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Nav } from 'react-bootstrap';
+import { Navbar, Nav, NavLink } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { signoutUser } from '../../store/action'
@@ -22,6 +22,11 @@ export default () => {
         <Nav.Link onClick={() => history.push('/')}>Home</Nav.Link>
         <Nav.Link>About</Nav.Link>
         <Nav.Link onClick={() => history.push('/loc')}>Location</Nav.Link>
+        <Nav.Link onClick={() => history.push('/testi')}>Testimony</Nav.Link>
+        {
+          user.username
+            && <Nav.Link>Welcome { user.username }</Nav.Link>
+        }
         {
           isSignin
             ? <Nav.Link onClick={() => { dispatch(signoutUser()); localStorage.removeItem('token') }}>SignOut</Nav.Link>

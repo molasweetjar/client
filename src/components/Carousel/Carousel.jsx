@@ -16,8 +16,8 @@ export default () => {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://storage.cloud.google.com/ecommerce_project/madewithlove/Screen%20Shot%202019-12-23%20at%2019.22.44.png?authuser=0"
-            alt="Fail Loaded Image"
+            src="https://storage.cloud.google.com/ecommerce_project/mola.jpg?authuser=0"
+            alt="Mola Sweet Jar"
             height='300'
           />
           <Carousel.Caption style={{ color: 'black' }}>
@@ -26,8 +26,8 @@ export default () => {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://storage.cloud.google.com/ecommerce_project/madewithlove/Screen%20Shot%202019-12-23%20at%2019.28.14.png?authuser=0"
-            alt="Fail Loaded Image"
+            src="https://storage.cloud.google.com/ecommerce_project/eyon.jpg?authuser=0"
+            alt="Mola Sweet Jar"
             height='300'
           />
           <Carousel.Caption>
@@ -36,8 +36,18 @@ export default () => {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://storage.cloud.google.com/ecommerce_project/madewithlove/Screen%20Shot%202019-12-22%20at%2014.55.33.png?authuser=0"
-            alt="Fail Loaded Image"
+            src="https://storage.cloud.google.com/ecommerce_project/eli.jpg?authuser=0"
+            alt="Mola Sweet Jar"
+            height= '300'
+          />
+          <Carousel.Caption>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src="https://storage.cloud.google.com/ecommerce_project/event.jpg?authuser=0"
+            alt="Mola Sweet Jar"
             height= '300'
           />
           <Carousel.Caption>
